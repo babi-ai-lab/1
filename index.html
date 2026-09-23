@@ -1,78 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<meta name="theme-color" content="#1c2b5e">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
 
-<title>برنامه ۶ هفته‌ای خفن</title>
+<meta
+    name="theme-color"
+    content="#1c2b5e"
+>
+
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+>
+
+<title>برنامه ۶ هفته‌ای فیزیک کلاسیک</title>
+
 
 <style>
 
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root{
+
     --bg:#f5f7fb;
+
     --card:#ffffff;
+
     --text:#1c2b5e;
+
     --muted:#6b7280;
+
     --primary:#1c2b5e;
+
     --secondary:#304a9c;
+
     --line:#e5e7eb;
+
     --input:#f8fafc;
+
     --success:#16a34a;
+
     --gold:#ffd54f;
+
     --shadow:0 6px 18px rgba(0,0,0,.06);
+
 }
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
 
 body.dark{
+
     --bg:#0d1424;
+
     --card:#151e32;
+
     --text:#f3f6ff;
+
     --muted:#aab3c7;
+
     --primary:#263a78;
+
     --secondary:#304a9c;
+
     --line:#29344b;
+
     --input:#101827;
+
     --shadow:0 6px 18px rgba(0,0,0,.22);
+
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
+
+
+/* =====================================================
+   HTML
+===================================================== */
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
+
+/* =====================================================
+   BODY
+===================================================== */
+
 body{
-    font-family:Tahoma,Arial,sans-serif;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
     background:var(--bg);
+
     color:var(--text);
+
     padding:
         max(8px,env(safe-area-inset-top))
         10px
         max(18px,env(safe-area-inset-bottom));
+
     transition:.25s;
+
 }
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container{
+
     width:100%;
+
     max-width:800px;
+
     margin:auto;
+
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
+
     background:
         linear-gradient(
             135deg,
@@ -91,55 +178,90 @@ header{
     box-shadow:var(--shadow);
 
     position:sticky;
+
     top:5px;
 
     z-index:20;
+
 }
+
+
+/* =====================================================
+   TITLE
+===================================================== */
 
 h1{
+
     text-align:center;
+
     font-size:18px;
+
     line-height:1.5;
+
     margin-bottom:1px;
+
 }
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
 
 .subtitle{
+
     text-align:center;
+
     font-size:10px;
+
     opacity:.8;
+
 }
 
 
-/* =========================
+/* =====================================================
    DAILY PROGRESS
-========================= */
+===================================================== */
 
 .progress-wrap{
+
     margin-top:9px;
+
 }
 
+
 .progress-label{
+
     display:flex;
+
     justify-content:space-between;
 
     font-size:10px;
 
     margin-bottom:4px;
+
 }
 
+
 .progress{
+
     width:100%;
+
     height:6px;
 
-    background:rgba(255,255,255,.20);
+    background:
+        rgba(255,255,255,.20);
 
     border-radius:50px;
 
     overflow:hidden;
+
 }
 
+
 .progress-bar{
+
     width:0%;
+
     height:100%;
 
     background:var(--gold);
@@ -147,22 +269,28 @@ h1{
     border-radius:50px;
 
     transition:width .3s ease;
+
 }
 
 
-/* =========================
-   DARK BUTTON
-========================= */
+/* =====================================================
+   TOP ACTIONS
+===================================================== */
 
 .top-actions{
+
     display:flex;
-    justify-content:center;
+
+    gap:6px;
 
     margin-top:8px;
+
 }
 
+
 .action-button{
-    width:100%;
+
+    flex:1;
 
     padding:7px 10px;
 
@@ -180,14 +308,33 @@ h1{
     font-size:10px;
 
     cursor:pointer;
+
+    transition:.2s;
+
 }
 
 
-/* =========================
+.action-button:active{
+
+    transform:scale(.97);
+
+}
+
+
+.reset-button{
+
+    background:
+        rgba(255,213,79,.18);
+
+}
+
+
+/* =====================================================
    TABS
-========================= */
+===================================================== */
 
 .tabs{
+
     display:flex;
 
     gap:6px;
@@ -208,13 +355,19 @@ h1{
     background:var(--bg);
 
     scrollbar-width:none;
+
 }
+
 
 .tabs::-webkit-scrollbar{
+
     display:none;
+
 }
 
+
 .tab{
+
     flex:0 0 auto;
 
     padding:
@@ -242,35 +395,45 @@ h1{
         rgba(0,0,0,.04);
 
     cursor:pointer;
+
 }
 
+
 .tab.active{
+
     background:var(--primary);
 
     color:white;
 
     border-color:var(--primary);
+
 }
 
 
-/* =========================
+/* =====================================================
    DAY
-========================= */
+===================================================== */
 
 .day{
+
     display:none;
+
 }
+
 
 .day.active{
+
     display:block;
+
 }
 
 
-/* =========================
+/* =====================================================
    DAY CARD
-========================= */
+===================================================== */
 
 .day-card{
+
     background:var(--card);
 
     border-radius:16px;
@@ -280,9 +443,12 @@ h1{
     margin-bottom:12px;
 
     box-shadow:var(--shadow);
+
 }
 
+
 .day-title{
+
     background:var(--primary);
 
     color:white;
@@ -294,9 +460,12 @@ h1{
     font-size:15px;
 
     font-weight:bold;
+
 }
 
+
 .day-description{
+
     padding:8px 12px;
 
     font-size:10px;
@@ -308,35 +477,47 @@ h1{
         var(--line);
 
     text-align:center;
+
 }
 
 
-/* =========================
+/* =====================================================
    EXERCISE
-========================= */
+===================================================== */
 
 .exercise{
+
     padding:12px 11px;
 
     border-bottom:
         1px solid
         var(--line);
+
 }
+
 
 .exercise:last-child{
+
     border-bottom:none;
+
 }
 
+
 .exercise-head{
+
     display:flex;
 
     align-items:flex-start;
 
     gap:8px;
+
 }
 
+
 .exercise-checkbox{
+
     width:23px;
+
     height:23px;
 
     min-width:23px;
@@ -346,9 +527,12 @@ h1{
     accent-color:var(--success);
 
     cursor:pointer;
+
 }
 
+
 .exercise-name{
+
     flex:1;
 
     font-size:13px;
@@ -356,9 +540,12 @@ h1{
     font-weight:bold;
 
     line-height:1.7;
+
 }
 
+
 .exercise-reps{
+
     font-size:10px;
 
     color:var(--muted);
@@ -366,20 +553,25 @@ h1{
     white-space:nowrap;
 
     margin-top:3px;
+
 }
 
+
 .exercise.completed .exercise-name{
+
     text-decoration:line-through;
 
     opacity:.5;
+
 }
 
 
-/* =========================
+/* =====================================================
    WEIGHT
-========================= */
+===================================================== */
 
 .weight-row{
+
     display:flex;
 
     align-items:center;
@@ -391,15 +583,21 @@ h1{
         0
         0
         31px;
+
 }
 
+
 .weight-label{
+
     color:var(--muted);
 
     font-size:10px;
+
 }
 
+
 .weight-input{
+
     width:95px;
 
     padding:8px 6px;
@@ -421,24 +619,32 @@ h1{
     outline:none;
 
     font-size:12px;
+
 }
+
 
 .weight-input:focus{
+
     border-color:var(--secondary);
+
 }
 
+
 .weight-unit{
+
     font-size:10px;
 
     color:var(--muted);
+
 }
 
 
-/* =========================
+/* =====================================================
    SETS
-========================= */
+===================================================== */
 
 .sets{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -450,10 +656,14 @@ h1{
         0
         0
         31px;
+
 }
 
+
 .set-button{
+
     width:31px;
+
     height:31px;
 
     border-radius:8px;
@@ -473,17 +683,23 @@ h1{
     font-weight:bold;
 
     cursor:pointer;
+
 }
 
+
 .set-button.done{
+
     background:var(--success);
 
     color:white;
 
     border-color:var(--success);
+
 }
 
+
 .set-title{
+
     margin:
         4px
         0
@@ -493,14 +709,16 @@ h1{
     color:var(--muted);
 
     font-size:8px;
+
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer{
+
     background:var(--card);
 
     border-radius:16px;
@@ -510,32 +728,43 @@ h1{
     box-shadow:var(--shadow);
 
     margin-bottom:18px;
+
 }
 
+
 .footer h2{
+
     font-size:15px;
 
     margin-bottom:10px;
+
 }
+
 
 .footer ul{
+
     padding-right:18px;
+
 }
 
+
 .footer li{
+
     font-size:11px;
 
     line-height:1.8;
 
     margin-bottom:5px;
+
 }
 
 
-/* =========================
+/* =====================================================
    TOAST
-========================= */
+===================================================== */
 
 .toast{
+
     position:fixed;
 
     left:50%;
@@ -565,84 +794,125 @@ h1{
     transition:.25s;
 
     z-index:100;
+
 }
 
+
 .toast.show{
+
     opacity:1;
 
     transform:
         translateX(-50%)
         translateY(0);
+
 }
 
 
-/* =========================
+/* =====================================================
    DESKTOP
-========================= */
+===================================================== */
 
 @media(min-width:700px){
 
     body{
+
         padding:20px;
+
     }
+
 
     .container{
+
         max-width:820px;
+
     }
 
+
     .tabs{
+
         top:125px;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="container">
 
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
 
+
 <h1>
-    برنامه ۶ هفته‌ای خفن
+
+برنامه ۶ هفته‌ای فیزیک کلاسیک
+
 </h1>
 
+
 <div class="subtitle">
-    تمرین امروز را کامل کن و پیشرفتت را ببین
+
+تمرین امروز را کامل کن و پیشرفتت را ببین
+
 </div>
 
+
+<!-- PROGRESS -->
 
 <div class="progress-wrap">
 
+
 <div class="progress-label">
 
+
 <span id="progressTitle">
-    پیشرفت امروز
+
+پیشرفت امروز
+
 </span>
 
+
 <span id="progressText">
-    ۰٪
+
+۰٪
+
 </span>
+
 
 </div>
 
+
 <div class="progress">
+
 
 <div
     class="progress-bar"
     id="progressBar">
 </div>
 
-</div>
 
 </div>
 
+
+</div>
+
+
+<!-- BUTTONS -->
 
 <div class="top-actions">
+
 
 <button
     class="action-button"
@@ -652,10 +922,25 @@ h1{
 
 </button>
 
+
+<button
+    class="action-button reset-button"
+    id="resetButton">
+
+🔄 ریست امروز
+
+</button>
+
+
 </div>
+
 
 </header>
 
+
+<!-- =====================================================
+     TABS
+===================================================== -->
 
 <nav
     class="tabs"
@@ -663,57 +948,98 @@ h1{
 </nav>
 
 
+<!-- =====================================================
+     WORKOUT
+===================================================== -->
+
 <main
     id="workout">
 </main>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <div class="footer">
 
+
 <h2>
-    نکات ۶ هفته
+
+نکات ۶ هفته
+
 </h2>
+
 
 <ul>
 
+
 <li>
+
 هفته ۱: شروع کنترل‌شده
+
 </li>
 
+
 <li>
+
 هفته ۲: افزایش تدریجی وزنه یا تکرار
+
 </li>
 
+
 <li>
+
 هفته ۳: هفته پرفشار
+
 </li>
 
+
 <li>
+
 هفته ۴: دیلود؛ حدود ۵۰ تا ۶۰٪ حجم هفته ۳
+
 </li>
 
+
 <li>
+
 هفته ۵: بازگشت به حجم هفته ۳
+
 </li>
 
+
 <li>
+
 هفته ۶: پیشروی کنترل‌شده
+
 </li>
 
+
 <li>
+
 کاردیو: شنبه تا چهارشنبه، ۲۰–۲۵ دقیقه بعد از تمرین
+
 </li>
 
+
 <li>
+
 جمعه: استراحت
+
 </li>
+
 
 </ul>
 
-</div>
 
 </div>
 
+
+</div>
+
+
+<!-- TOAST -->
 
 <div
     class="toast"
@@ -730,102 +1056,194 @@ h1{
 
 const workout = [
 
+
 {
+
 id:"sat",
+
 day:"شنبه",
+
 title:"بالاسینه + عرض لت",
+
 exercises:[
+
 ["پرس سینه بالاسینه با هالتر","3 × 6–8"],
+
 ["لت‌پول‌دان دست خنثی","3 × 8–12"],
+
 ["پرس بالاسینه دمبل","3 × 8–12"],
+
 ["لت‌پول‌دان تک‌دست کابل","3 × 10–15"],
+
 ["فلای کابل پایین به بالا","2 × 12–15"],
+
 ["پول‌اور دست‌صاف کابل","2 × 12–15"],
+
 ["نشر جانب کابل","3 × 12–20"],
+
 ["وکیوم شکم","3 × 20–30 ثانیه"]
+
 ]
+
 },
 
+
 {
+
 id:"sun",
+
 day:"یکشنبه",
+
 title:"سرشانه + بازو",
+
 exercises:[
+
 ["پرس سرشانه دمبل نشسته","3 × 6–10"],
+
 ["نشر جانب کابل","4 × 12–20"],
+
 ["نشر جانب دستگاه","3 × 12–20"],
+
 ["پک‌دک معکوس","3 × 12–20"],
+
 ["جلو بازو EZ","3 × 8–12"],
+
 ["جلو بازو دمبل شیب‌دار","2 × 10–15"],
+
 ["پشت بازو سیم‌کش","3 × 8–12"],
+
 ["پشت بازو بالای سر کابل","3 × 10–15"],
+
 ["نشر جانب نیمه","1 × 20–30"]
+
 ]
+
 },
 
+
 {
+
 id:"mon",
+
 day:"دوشنبه",
+
 title:"پشت: عرض + ضخامت",
+
 exercises:[
+
 ["بارفیکس / کمکی","3 × 6–10"],
+
 ["قایقی سینه‌تکیه","3 × 8–12"],
+
 ["لت‌پول‌دان دست نزدیک خنثی","3 × 8–12"],
+
 ["قایقی کابل نشسته","3 × 10–15"],
+
 ["های‌رو دستگاه","2 × 8–12"],
+
 ["روئینگ تک‌دست لت","2 × 10–15"],
+
 ["پک‌دک معکوس","3 × 15–20"],
+
 ["پول‌اور کابل","2 × 12–15"]
+
 ]
+
 },
 
+
 {
+
 id:"tue",
+
 day:"سه‌شنبه",
+
 title:"سینه + سرشانه",
+
 exercises:[
+
 ["پرس بالاسینه اسمیت","3 × 6–10"],
+
 ["پرس سینه دمبل","3 × 8–12"],
+
 ["پرس سینه دستگاه","2 × 10–15"],
+
 ["فلای کابل","2 × 12–15"],
+
 ["نشر جانب کابل متمایل","4 × 12–20"],
+
 ["نشر جانب دستگاه","3 × 15–20"],
+
 ["پک‌دک معکوس","2 × 15–20"],
+
 ["کرانچ کابل","3 × 10–15"]
+
 ]
+
 },
 
+
 {
+
 id:"wed",
+
 day:"چهارشنبه",
+
 title:"پشت + بازو + سرشانه",
+
 exercises:[
+
 ["لت‌پول‌دان","3 × 10–12"],
+
 ["تی‌بار با تکیه‌گاه سینه","3 × 8–12"],
+
 ["پول‌اور دست‌صاف","2 × 12–15"],
+
 ["نشر جانب کابل","4 × 12–20"],
+
 ["نشر معکوس کابل","2 × 15–20"],
+
 ["جلو بازو لاری","3 × 8–12"],
+
 ["جلو بازو کابل","2 × 12–15"],
+
 ["پشت بازو بالای سر کابل","3 × 10–15"],
+
 ["پشت بازو طنابی","2 × 12–15"]
+
 ]
+
 },
 
+
 {
+
 id:"thu",
+
 day:"پنجشنبه",
+
 title:"پا، تمرکز بر چهارسر",
+
 exercises:[
+
 ["جلو پا دستگاه","2 × 12–15"],
+
 ["هاک اسکوات","3 × 6–10"],
+
 ["پرس پا","2 × 10–15"],
+
 ["اسپلیت اسکوات بلغاری","2 × 8–12 هر پا"],
+
 ["ددلیفت رومانیایی","2 × 8–12"],
+
 ["پشت پا نشسته","3 × 10–15"],
+
 ["ساق ایستاده","3 × 8–12"],
+
 ["ساق نشسته","2 × 12–20"]
+
 ]
+
 }
 
 ];
@@ -845,10 +1263,15 @@ localStorage.getItem(STORAGE_KEY)
 )
 ||
 {
+
 checks:{},
+
 weights:{},
+
 sets:{},
+
 dark:false
+
 };
 
 
@@ -859,8 +1282,12 @@ dark:false
 function faNumber(number){
 
 return String(number).replace(
+
 /\d/g,
-digit=>"۰۱۲۳۴۵۶۷۸۹"[digit]
+
+digit =>
+"۰۱۲۳۴۵۶۷۸۹"[digit]
+
 );
 
 }
@@ -873,8 +1300,11 @@ digit=>"۰۱۲۳۴۵۶۷۸۹"[digit]
 function save(){
 
 localStorage.setItem(
+
 STORAGE_KEY,
+
 JSON.stringify(state)
+
 );
 
 updateProgress();
@@ -891,15 +1321,24 @@ function showToast(message){
 const toast =
 document.getElementById("toast");
 
-toast.textContent=message;
+
+toast.textContent =
+message;
+
 
 toast.classList.add("show");
 
+
 setTimeout(
+
 ()=>{
+
 toast.classList.remove("show");
+
 },
+
 1500
+
 );
 
 }
@@ -922,15 +1361,19 @@ function render(){
 const tabs =
 document.getElementById("tabs");
 
+
 const workoutContainer =
 document.getElementById("workout");
 
+
 tabs.innerHTML="";
+
 
 workoutContainer.innerHTML="";
 
 
 workout.forEach(
+
 (day,index)=>{
 
 
@@ -938,6 +1381,7 @@ workout.forEach(
 
 const tab =
 document.createElement("button");
+
 
 tab.className =
 "tab" +
@@ -947,9 +1391,14 @@ index===0
 :""
 );
 
-tab.textContent=day.day;
 
-tab.dataset.day=day.id;
+tab.textContent =
+day.day;
+
+
+tab.dataset.day =
+day.id;
+
 
 tabs.appendChild(tab);
 
@@ -959,6 +1408,7 @@ tabs.appendChild(tab);
 const daySection =
 document.createElement("section");
 
+
 daySection.className =
 "day" +
 (
@@ -967,16 +1417,20 @@ index===0
 :""
 );
 
-daySection.id=day.id;
+
+daySection.id =
+day.id;
 
 
 const card =
 document.createElement("div");
 
-card.className="day-card";
+
+card.className =
+"day-card";
 
 
-card.innerHTML=`
+card.innerHTML = `
 
 <div class="day-title">
 
@@ -985,6 +1439,7 @@ ${day.day}
 ${day.title}
 
 </div>
+
 
 <div class="day-description">
 
@@ -999,6 +1454,7 @@ ${day.title}
 /* ---------- EXERCISES ---------- */
 
 day.exercises.forEach(
+
 (exercise,index)=>{
 
 
@@ -1009,8 +1465,9 @@ day.id+"_"+index;
 const row =
 document.createElement("div");
 
+
 row.className =
-"exercise"+
+"exercise" +
 (
 state.checks[exerciseId]
 ?" completed"
@@ -1023,10 +1480,13 @@ state.checks[exerciseId]
 const match =
 exercise[1].match(/^(\d+)/);
 
+
 const numberOfSets =
 match
-?parseInt(match[1])
-:1;
+?
+parseInt(match[1])
+:
+1;
 
 
 /* SET BUTTONS */
@@ -1035,9 +1495,13 @@ let setButtons="";
 
 
 for(
+
 let set=1;
+
 set<=numberOfSets;
+
 set++
+
 ){
 
 const setId =
@@ -1046,7 +1510,7 @@ exerciseId+
 set;
 
 
-setButtons+=`
+setButtons += `
 
 <button
 
@@ -1070,9 +1534,10 @@ ${faNumber(set)}
 }
 
 
-row.innerHTML=`
+row.innerHTML = `
 
 <div class="exercise-head">
+
 
 <input
 
@@ -1090,11 +1555,13 @@ state.checks[exerciseId]
 
 >
 
+
 <div class="exercise-name">
 
 ${exercise[0]}
 
 </div>
+
 
 <div class="exercise-reps">
 
@@ -1102,14 +1569,19 @@ ${exercise[1]}
 
 </div>
 
+
 </div>
 
 
 <div class="weight-row">
 
+
 <span class="weight-label">
+
 وزنه:
+
 </span>
+
 
 <input
 
@@ -1122,16 +1594,20 @@ inputmode="decimal"
 placeholder="مثلاً ۲۰"
 
 value="${
-state.weights[exerciseId]||""
+state.weights[exerciseId] || ""
 }"
 
 data-weight="${exerciseId}"
 
 >
 
+
 <span class="weight-unit">
+
 کیلو
+
 </span>
+
 
 </div>
 
@@ -1159,12 +1635,14 @@ card.appendChild(row);
 
 daySection.appendChild(card);
 
+
 workoutContainer.appendChild(daySection);
 
 });
 
 
 bindEvents();
+
 
 updateProgress();
 
@@ -1182,7 +1660,9 @@ document
 .querySelectorAll(".tab")
 .forEach(tab=>{
 
+
 tab.onclick=function(){
+
 
 document
 .querySelectorAll(".tab")
@@ -1214,8 +1694,11 @@ updateProgress();
 
 
 window.scrollTo({
+
 top:0,
+
 behavior:"smooth"
+
 });
 
 };
@@ -1231,20 +1714,28 @@ document
 .querySelectorAll("[data-check]")
 .forEach(checkbox=>{
 
+
 checkbox.onchange=function(){
+
 
 const id =
 checkbox.dataset.check;
 
+
 state.checks[id] =
 checkbox.checked;
+
 
 checkbox
 .closest(".exercise")
 .classList.toggle(
+
 "completed",
+
 checkbox.checked
+
 );
+
 
 save();
 
@@ -1261,13 +1752,17 @@ document
 .querySelectorAll("[data-weight]")
 .forEach(input=>{
 
+
 input.oninput=function(){
+
 
 const id =
 input.dataset.weight;
 
-state.weights[id]=
+
+state.weights[id] =
 input.value;
+
 
 save();
 
@@ -1284,18 +1779,26 @@ document
 .querySelectorAll("[data-set]")
 .forEach(button=>{
 
+
 button.onclick=function(){
+
 
 const id =
 button.dataset.set;
 
-state.sets[id]=
+
+state.sets[id] =
 !state.sets[id];
 
+
 button.classList.toggle(
+
 "done",
+
 state.sets[id]
+
 );
+
 
 save();
 
@@ -1312,23 +1815,30 @@ save();
 
 function updateProgress(){
 
+
 const day =
 workout.find(
+
 d=>d.id===currentDayId
+
 );
 
 
 if(!day){
+
 return;
+
 }
 
 
 let totalSets=0;
 
+
 let completedSets=0;
 
 
 day.exercises.forEach(
+
 (exercise,index)=>{
 
 
@@ -1342,17 +1852,24 @@ exercise[1].match(/^(\d+)/);
 
 const numberOfSets =
 match
-?parseInt(match[1])
-:1;
+?
+parseInt(match[1])
+:
+1;
 
 
-totalSets+=numberOfSets;
+totalSets +=
+numberOfSets;
 
 
 for(
+
 let set=1;
+
 set<=numberOfSets;
+
 set++
+
 ){
 
 const setId =
@@ -1362,7 +1879,9 @@ set;
 
 
 if(state.sets[setId]){
+
 completedSets++;
+
 }
 
 }
@@ -1378,7 +1897,8 @@ completedSets/
 totalSets*
 100
 )
-:0;
+:
+0;
 
 
 document
@@ -1407,18 +1927,27 @@ document
 
 function updateDarkMode(){
 
+
 document.body.classList.toggle(
+
 "dark",
+
 state.dark
+
 );
 
 
 document
 .getElementById("darkButton")
 .textContent =
+
 state.dark
-?"☀️ حالت روشن"
-:"🌙 حالت تاریک";
+
+?
+"☀️ حالت روشن"
+
+:
+"🌙 حالت تاریک";
 
 }
 
@@ -1427,12 +1956,130 @@ document
 .getElementById("darkButton")
 .onclick=function(){
 
-state.dark=
+
+state.dark =
 !state.dark;
+
 
 updateDarkMode();
 
+
 save();
+
+};
+
+
+/* =====================================================
+   RESET CURRENT DAY
+===================================================== */
+
+document
+.getElementById("resetButton")
+.onclick=function(){
+
+
+const day =
+workout.find(
+
+d=>d.id===currentDayId
+
+);
+
+
+if(!day){
+
+return;
+
+}
+
+
+const confirmed =
+confirm(
+
+`آیا مطمئنی می‌خواهی تمرین‌های ${day.day} را ریست کنی؟`
+
+);
+
+
+if(!confirmed){
+
+return;
+
+}
+
+
+/* حذف تیک‌ها و ست‌های روز جاری */
+
+day.exercises.forEach(
+
+(exercise,index)=>{
+
+
+const exerciseId =
+day.id+"_"+index;
+
+
+/* حذف تیک تمرین */
+
+delete state.checks[exerciseId];
+
+
+/* تعداد ست‌ها */
+
+const match =
+exercise[1].match(/^(\d+)/);
+
+
+const numberOfSets =
+match
+?
+parseInt(match[1])
+:
+1;
+
+
+/* حذف وضعیت ست‌ها */
+
+for(
+
+let set=1;
+
+set<=numberOfSets;
+
+set++
+
+){
+
+const setId =
+exerciseId+
+"_set_"+
+set;
+
+
+delete state.sets[setId];
+
+}
+
+});
+
+
+/* ذخیره */
+
+save();
+
+
+/* بازسازی صفحه */
+
+render();
+
+
+/* نمایش پیام */
+
+showToast(
+
+`تمرین ${day.day} ریست شد`
+
+);
 
 };
 
@@ -1443,9 +2090,13 @@ save();
 
 updateDarkMode();
 
+
 render();
+
 
 </script>
 
+
 </body>
+
 </html>
